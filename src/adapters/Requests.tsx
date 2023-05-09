@@ -4,16 +4,14 @@ import { GetBrewerieType } from "../types/ApiTypes"
 
 const BASEURL = "https://api.openbrewerydb.org/v1/breweries"
 
-export const getBrewerie = async (params?:any|null) => {
-    console.log('request initi')
+export const getBrewerie = async (params?:any|null) => {  
     let requestData
     if(params) {
         requestData = await axios.get<GetBrewerieType[]>(BASEURL,{params: params})        
     } else {        
         requestData = await axios.get<GetBrewerieType[]>(BASEURL)     
     }
-    return requestData.data
-     
+    return requestData.data     
 }
 
 export const getById = async(id:string) => {
@@ -22,22 +20,6 @@ export const getById = async(id:string) => {
 }
 
 
-// const getRandomBrewerie =async <T,>(params:any) => {
-//     const requestData = await axios.get<T>(BASEURL+"\radom",)
-//     return requestData    
-// }
-
-// const getSearchBrewerie =async <T,>(params:any) => {
-//     const requestData = await axios.get<T>(BASEURL+"\search",)
-//     return requestData
-    
-// }
-
-// const getAutoCompleteBrewerie =async <T,>(params:any) => {
-//     const requestData = await axios.get<T>(BASEURL+"\autocomplete",)
-//     return requestData
-    
-// }
 
 
 

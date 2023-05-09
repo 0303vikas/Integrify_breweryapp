@@ -27,31 +27,32 @@ export const SingleBrewerie = () => {
 
     useEffect(() => {
         try{
-            
-
-            const getData = async () => {
-                              
-            if(id) {
-                const da = await getById(id)
-            setData(da)
-            console.log(da)
-
-            }
-            
-        }
+            const getData = async () => {                              
+                        if(id) {
+                        const da = await getById(id)
+                        setData(da)
+                    }            
+                }
         getData()
-
         }catch(error: unknown){
             // const throwError = error as AxiosError           
-            setErrorMessage(error)
-           
-            
+            setErrorMessage(error)           
         }
     },[id])
-  return (
-    <div>{
-        data.name
-      }</div>
+
+  return (        
+        <aside>
+            <h1 style={{justifyContent: 'center'}}>{data.name}</h1>           
+            <p>Brewery Type: {data.brewery_type}</p>
+            <p>Address: {data.address_1}</p>
+            <p>City: {data.city}</p>
+            <p>State: {data.state}</p>
+            <p>Postal Code: {data.postal_code}</p>
+            <p>Country: {data.country}</p>
+            {data.latitude?<p>Coordinates: {data.latitude}, {data.longitude}</p>:null}
+            {data.phone?<p>Contact No: {data.phone}</p>:null}
+            {data.website_url?<p>Website Link: {data.website_url?data.website_url: 'Not Available'}</p>:null}
+        </aside>       
   )
 }
 

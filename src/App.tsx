@@ -6,9 +6,8 @@ import { Trying } from './components/Trying'
 import { SingleBrewerie } from './pages/SingleBrewerie'
 import {NotFound} from './pages/NotFound'
 import { ThemeProvider } from '@emotion/react'
-import { theme } from './styles/Theme'
-
-
+import { theme } from './themes/theme'
+import './styles/style.scss'
 
 const appRouter = createBrowserRouter([
   {
@@ -33,10 +32,10 @@ const appRouter = createBrowserRouter([
 ])
 
 const App = () => {
-  return (
-    <ThemeProvider theme={theme} >
-    <RouterProvider router={appRouter} />
-    </ThemeProvider>
+  return (    
+      <ThemeProvider theme={theme} >        
+        <RouterProvider router={appRouter} />        
+      </ThemeProvider>    
   )
 }
 

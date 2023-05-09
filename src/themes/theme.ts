@@ -5,13 +5,13 @@ export const theme = createTheme({
         primary: {
             main: '#90caf9',
             light: '#e3f2fd',
-            dark: '#42a5f5'
+            dark: '#42a5f5',            
         },
         secondary:{
-            main: '#ce93d8',
+            main: '#008080',
             light: '#f3e5f5',
             dark: '#ab47bc'
-        },
+        },        
         error:{
             main: '#f44336',
             light: '#e57373',
@@ -31,7 +31,6 @@ export const theme = createTheme({
             main: '#66bb6a',
             light: '#81c784',
             dark: '#388e3c'
-        }
+        }        
     }
-
 })
