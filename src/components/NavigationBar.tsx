@@ -1,3 +1,8 @@
+/**
+ * @file Navigation Bars
+ * @description MUi Top navigation bar and bottom navigation bar
+ * @Author Vikas singh
+ */
 import * as React from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
@@ -15,8 +20,18 @@ import { List, ListItem } from '@mui/material'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookSquare, faLinkedinIn, faGithub, faWhatsapp,faTwitter } from '@fortawesome/free-brands-svg-icons'
 
-
-const NavigationBar = ({handleSearch}:{handleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void}) => {
+/**
+ * @description Top navigatioin bar, added to home pages
+ * @param param: react.changeEvent
+ * - checks the search result and passes to parent
+ * - Click on apps name redirects to home page
+ * - Next onClick opens next page of api
+ * - Previous onClick opens pervious page of api
+ * @returns JSX.element top navigation  * 
+ * @notes
+ * - support mui custom theme for css
+ */
+const TopNavigationBar = ({handleSearch}:{handleSearch: (e: React.ChangeEvent<HTMLInputElement>) => void}) => {
     const theme = useTheme()
   return (
     <Box sx={{ flexGrow: 1, backgroundColor: 'teal' }}>
@@ -49,6 +64,13 @@ const NavigationBar = ({handleSearch}:{handleSearch: (e: React.ChangeEvent<HTMLI
   )
 }
 
+/**
+ * @description bottom navigatioin bar, added to home pages
+ * @returns JSX.element bottom navigation 
+ * @note
+ * - the social media icons are without reference to any url
+ * - Home page redrirects to home page 
+ */
 export const BottomNavigationBar = () => {
     const theme = useTheme()
   return (
@@ -78,9 +100,8 @@ export const BottomNavigationBar = () => {
       </AppBar>
     </Box>
   )
-
 }
 
-export default NavigationBar
+export default TopNavigationBar
 
                     

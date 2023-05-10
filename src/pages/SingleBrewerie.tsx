@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
- import { getById } from '../adapters/Requests'
-import { GetBrewerieType } from '../types/ApiTypes'
+ import { getById } from '../adapters/requests'
+import { GetBrewerieType } from '../types/AdapterRequests'
 
 export const SingleBrewerie = () => {
     const { id } = useParams()

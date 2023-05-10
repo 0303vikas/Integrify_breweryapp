@@ -1,25 +1,92 @@
+
 # Breweries App
 
 Fetch, display, and search for brewery companies from the given API endpoint, using React and TypeScript
 
-## Requirements
+## Authors
 
-1. Check the documentation at [https://www.openbrewerydb.org/documentation](https://www.openbrewerydb.org/documentation) Fetch and display information of all the companies.
+- [@VikasSingh](https://github.com/0303vikas)
 
-2. Have proper display and routing that user can switch to/back from specific company's detailed page
+## API Reference
 
-3. Create search component to enable user to input text and search for companies by name.
+#### Get all items
 
-4. Use MaterialUI to make your design more appealing and responsive
+```http
+  GET https://api.openbrewerydb.org/v1/breweries
+  ```
+  | Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `per_page`| `string` | **Not Required**. No of data string to fetch |
+| `page`| `string` | **Not Required**. page no of item to fetch |
 
-5. Implement performance optimization where applicable
+#### Get item name 
 
-6. Deploy your application and rewrite README file
+```http
+  GET https://api.openbrewerydb.org/v1/breweries
+  ```
+  | Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `per_page`| `string` | **Not Required**. No of data string to fetch |
+| `page`| `string` | **Not Required**. page no of item to fetch |
+| `by_name`| `string` | **Not Required**. Name of item to fetch |
 
-## Optional
+#### Get item by id
 
-7. Use the queries listed in the documentation to sort and limit the returned data and build pagination feature.
+```http
+  GET /${id}
+```
 
-8. Create a contact form so that user can send question along with their contact information. 
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
 
-9. Use Google-login option to pre-fill the contact form for user.
+## Demo
+
+https://glowing-swan-c6e788.netlify.app/
+
+## Features
+
+- Search with Brewerie Name
+- Toggle data with Page Change
+- Individual Brewerie view
+
+## Tree
+
+```
+.
+├── App.tsx
+├── adapters
+│   └── requests.ts
+├── components
+│   ├── DisplayData.tsx
+│   ├── NavigationBar.tsx
+│   └── withLoading.tsx
+├── index.css
+├── index.tsx
+├── pages
+│   ├── Home.tsx
+│   ├── NotFound.tsx
+│   └── SingleBrewerie.tsx
+├── react-app-env.d.ts
+├── reportWebVitals.ts
+├── setupTests.ts
+├── styles
+│   └── style.scss
+├── themes
+│   ├── mainTheme.ts
+│   └── navigationBarTheme.ts
+└── types
+    ├── AdapterRequests.ts
+    └── DisplayDataProps.ts
+
+
+## Installation
+
+Install fs15_8-breweries-app with npm 
+
+```bash
+  npm install
+  npm start
+  npm run build   
+```
+    

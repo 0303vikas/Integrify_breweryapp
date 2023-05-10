@@ -16,3 +16,10 @@ export interface GetBrewerieType {
     state: string,
     street: string
 }
+
+export interface GetBrewerieProps {
+    by_name: string
+    per_page: string
+    page: number
+}
+

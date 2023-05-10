@@ -1,12 +1,33 @@
+/**
+ * @file DisplayData
+ * @description DisplayArea for all the breweries on the home page + pagination handling function
+ * @Author Vikas Singh 
+ * @note
+ * - component is passed to withLoading page 
+ * - after loading is finished, this display will handle data rendering on home page
+ */
 import React from "react"
-import { GetBrewerieType } from "../types/ApiTypes"
 import { withLoading } from "./withLoading"
 import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { DisplayDataProps } from "../types/DisplayDataProps"
 
-
-const GetData = (props: {data: GetBrewerieType[],nextBtn:JSX.Element | null,prevBtn: JSX.Element | null, pageNo: number}) => {    
+/**
+ * @description Displays data fetched from getData api, Clicking on each breweri redirects to particual brewerie page
+ * @param props: Object 
+ * - props.data: array 
+ * - @function props.preBtn 
+ * - @function props.nextBtn
+ * - props.pageNo: number
+ * @returns 
+ * - JSX.element
+ * @notes 
+ * - maps over data and renders it
+ * - handle redired to single brewerie page by OnClick event on mapped elements
+ * - next and previous page 
+ */
+const DisplayData = (props: DisplayDataProps) => {    
     let navigate = useNavigate()
     const redirectToBreweriePage = (id: string) => navigate(`brewerie/${id}`)    
     return ( 
@@ -35,4 +56,4 @@ const GetData = (props: {data: GetBrewerieType[],nextBtn:JSX.Element | null,prev
         </div>
     </div>)}
 
-export const DataPage = withLoading(GetData)
+export const DataPage = withLoading(DisplayData) // assign DisplayData after passing through withLoading function
